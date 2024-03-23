@@ -1,4 +1,5 @@
 **Wordle Solver**
+
 At Jane Street's Academy of Math and Programming, I implemented three algorithms that solve the New York Times's Wordle. The first algorithm randomly selects a word from a word bank, shrinks the word bank in 
 accordance with the information gained from making the guess (i.e., if you guess "ADIEU" and the program tells you "E" is not the target word, then all words with "E" are removed from the word bank), and repeats. 
 
@@ -14,4 +15,5 @@ After writing robust automated unit tests for these algorithms, I was able to co
 in an average of 3.51 guesses.
 
 **Takeaways**
+
 From this project, I learned about the concept of Shannon entropy and its implications in information theory. I also gained experience writing automated test cases and comparing algorithm efficiency.
