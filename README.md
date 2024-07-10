@@ -1,5 +1,7 @@
 **Wordle Solver**
 
+Completed July, 2023
+
 At Jane Street's Academy of Math and Programming, I implemented three algorithms that solve the New York Times's Wordle. The first algorithm randomly selects a word from a word bank, shrinks the word bank in 
 accordance with the information gained from making the guess (i.e., if you guess "ADIEU" and the program tells you "E" is not the target word, then all words with "E" are removed from the word bank), and repeats. 
 
