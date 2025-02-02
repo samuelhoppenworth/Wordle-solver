@@ -129,35 +129,19 @@ class Solver(Player):
                 if e >= entropy_word_pair[0]:
                     entropy_word_pair = [e, word]
             return entropy_word_pair[1]
-        
-        else: # Custom
+
+        # Draft of pseudo-code for applying entropy algorithm twice (entropy for every possible two guesses)
+        else: 
             """
             1. make copy of wordlist, call it wordlist_copy
-            2. loop through wordlist with two for loops
+            2. loop through wordlist with a nested for-loop
             3. set max_combined_entropy = 0
             4. find max_entropy, max_entropy_word, probability_distribution like normal
             5. for each possible pattern, refine wordlist_copy and find the second_max_entropy and second_max_entropy_word
             6. weight each second_max_entropy with corresponding pattern_probability and aggregate sum
             7. add this aggregate sum to first max_entropy, update max_combined_entropy if greater
             8. return """        
-            """total_patterns = patterns()
-            max_combined_entropy = 0
-            max_word_pair = []
-
-            for word in self.wordlist:
-                copy_wordlist = copy.deepcopy(self.wordlist)
-                pattern_distribution = [len(self.wordlist.matching(pattern, word))/len(self.wordlist) for pattern in total_patterns]
-                entropy1 = entropy(pattern_distribution)
-                entropy2 = 0
-                for index,p in enumerate(pattern_distribution):
-                    copy_wordlist.refine(p)
-                    case_entropy = self.find_entropy_value(copy_wordlist)
-                    entropy2 += case_entropy[0]*pattern_distribution[index]
-                    max_word_pair = [word, case_entropy[1]]
-                if (entropy1 + entropy2) > max_combined_entropy:
-                    max_combined_entropy = entropy1 + entropy2
-            return max_word_pair"""
-            return
+            return ""
 
 class Benchmark():
     def __init__(self, player, iterations, method):
