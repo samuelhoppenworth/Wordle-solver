@@ -12,7 +12,7 @@ The second algorithm guesses the same five words every time: *fjord, gucks, nymp
 
 ### Entropy-Based Algorithm
 
-The third algorithm leverages Shannon entropy to determine which guess provides the most information gain. Shannon entropy quantifies the level of uncertainty within a probability distribution. Specifically, a distribution with higher entropy reflects a more uniform spread of probabilities across its possible outcomes, while a distribution with lower entropy is more concentrated or predictable.
+The third algorithm uses Shannon entropy to predict which guess provides the most information gain. Shannon entropy measures the level of uncertainty within a probability distribution. In other words, a distribution with higher entropy indicates a more uniform spread of probabilities across its possible outcomes, while a distribution with lower entropy is more concentrated or predictable.
 
 For example, consider rolling a fair 100-sided die versus a fair 6-sided die. The probability distribution of the 100-sided die has higher entropy because its outcomes are spread across 100 equally likely possibilities, whereas the 6-sided die has only 6. As a result, there is significantly more uncertainty about the outcome of the 100-sided die compared to the 6-sided die.
 
