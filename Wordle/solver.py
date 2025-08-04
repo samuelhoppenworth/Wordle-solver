@@ -121,14 +121,8 @@ class Solver(Player):
         
         # Entropy function
         elif self.method ==  "entropy":
-            total_patterns = patterns()
-            entropy_word_pair = [0, ""] # [Entropy, entropy word]
-            for word in self.wordlist:
-                pattern_distribution = [len(self.wordlist.matching(pattern, word))/len(self.wordlist) for pattern in total_patterns]
-                e = entropy(pattern_distribution)
-                if e >= entropy_word_pair[0]:
-                    entropy_word_pair = [e, word]
-            return entropy_word_pair[1]
+            entropy_word_pair = self.find_entropy_value(self.wordlist) 
+            return entropy_word_par[1]
 
         # Draft of pseudo-code for applying entropy algorithm twice (entropy for every possible two guesses)
         else: 
@@ -207,3 +201,4 @@ def main():
 
 
 if __name__ == "__main__": main()
+
