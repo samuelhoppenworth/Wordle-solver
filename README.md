@@ -2,15 +2,20 @@
 
 Completed July, 2023
 
-### Naive algorithm
+## Naive algorithm
 
 The first algorithm randomly selects a word from a word bank, shrinks the word bank in accordance with the information gained from making the guess (i.e., if you guess "ADIEU" and the program tells you "E" is not the target word, then all words with "E" are removed from the word bank), and repeats. 
 
-### Matt Parker algorithm
+<b>Average number of guesses to solve (samples=1000):</b> 4.096
+
+
+## Matt Parker algorithm
 
 The second algorithm guesses the same five words every time: *fjord, gucks, nymph, vibex,* and *waltz*. When guessed together, these words provide information on 25 of the 26 letters of the alphabet. From there, the Naive algorithm is applied to the now greatly diminished bank of possible words. YouTuber and mathematician Matt Parker discovered this combinations of words in his video [Can you find: five five-letter words with twenty-five unique letters?](https://www.youtube.com/watch?v=_-AfhLQfb6w)
 
-### Entropy-Based Algorithm
+<b>Average number of guesses to solve (sample=1000):</b> 4.126
+
+## Entropy-Based Algorithm
 
 The third algorithm uses Shannon entropy to predict which guess provides the most information gain. Shannon entropy measures the level of uncertainty within a probability distribution. In other words, a distribution with higher entropy indicates a more uniform spread of probabilities across its possible outcomes, while a distribution with lower entropy is more concentrated or predictable.
 
@@ -20,7 +25,7 @@ In Wordle, this concept is applied by analyzing the possible color patterns that
 
 So, a word with higher entropy produces color patterns that are more evenly distributed, indicating greater uncertainty in the outcomes. This higher uncertainty translates to more information gained on average, as such a guess effectively narrows down the possible target words more efficiently than a word with a more predictable or concentrated pattern distribution.
 
-#### Algorithm pseudo-code
+### Algorithm pseudo-code
 
 1. Pattern Distribution:
    - For each word in the word list, calculate all possible color patterns that could result from guessing that word
@@ -36,8 +41,4 @@ So, a word with higher entropy produces color patterns that are more evenly dist
    - Iterate through all possible words in the word list, compute the entropy for each, and select the word with the highest entropy
    - This word is the one that, on average, provides the most information about the target word, helping to eliminate the largest number of possibilities in this step
 
-
-### Results
-
-By creating an automated test suite, I was able to compare efficiencies of these algorithms. The best one, expectedly, was the shannon entropy algorithm, which correctly guessed the target word 
-in an average of 3.51 guesses.
+<b>Average number of guesses to solve (sample=1000):</b> 3.43
