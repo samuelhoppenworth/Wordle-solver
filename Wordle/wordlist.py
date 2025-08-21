@@ -17,7 +17,7 @@ class WordList():
 
     """
 
-    def __init__(self, word_file = "possible_words.txt", given_words = None):
+    def __init__(self, word_file = "../word_lists/possible_words.txt", given_words = None):
         """construct a list of words by reading from `word_file`'
                 
         The default wordfile given is `possible_words.txt`. This is the list of actual
